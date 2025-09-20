@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Improved color palette with better contrast ratios */
+  --background: #faf9f7; /* Lighter cream background for better readability */
+  --foreground: #2c2c2c; /* Darker text for better contrast */
+  --card: #ffffff; /* White cards */
+  --card-foreground: #2c2c2c; /* Dark card text */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #2c2c2c; /* Dark popover text */
+  --primary: #724022; /* Brown primary */
+  --primary-foreground: #ffffff; /* White primary text */
+  --secondary: #f5f3f0; /* Light secondary */
+  --secondary-foreground: #2c2c2c; /* Dark secondary text */
+  --muted: #f5f3f0; /* Light muted */
+  --muted-foreground: #6b6b6b; /* Gray muted text */
+  --accent: #bf6349; /* Coral accent */
+  --accent-foreground: #ffffff; /* White accent text */
+  --destructive: #dc2626; /* Red destructive */
+  --destructive-foreground: #ffffff; /* White destructive text */
+  --border: #e5e5e5; /* Light borders */
+  --input: #ffffff; /* White inputs */
+  --ring: #724022; /* Brown focus rings */
+  --chart-1: #bf6349; /* Coral chart */
+  --chart-2: #727658; /* Olive chart */
+  --chart-3: #724022; /* Brown chart */
+  --chart-4: #e5d4c0; /* Cream chart */
+  --chart-5: #353843; /* Navy chart */
+  --radius: 0.75rem; /* Increased border radius for modern look */
+  --sidebar: #ffffff; /* White sidebar */
+  --sidebar-foreground: #2c2c2c; /* Dark sidebar text */
+  --sidebar-primary: #724022; /* Brown sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #f5f3f0; /* Light sidebar accent */
+  --sidebar-accent-foreground: #2c2c2c; /* Dark sidebar accent text */
+  --sidebar-border: #e5e5e5; /* Light sidebar border */
+  --sidebar-ring: #724022; /* Brown sidebar ring */
+}
+
+.dark {
+  --background: #1a1a1a; /* Dark background */
+  --foreground: #f5f3f0; /* Light text */
+  --card: #2c2c2c; /* Dark cards */
+  --card-foreground: #f5f3f0; /* Light card text */
+  --popover: #2c2c2c; /* Dark popover */
+  --popover-foreground: #f5f3f0; /* Light popover text */
+  --primary: #bf6349; /* Coral primary */
+  --primary-foreground: #ffffff; /* White primary text */
+  --secondary: #3c3c3c; /* Dark secondary */
+  --secondary-foreground: #f5f3f0; /* Light secondary text */
+  --muted: #3c3c3c; /* Dark muted */
+  --muted-foreground: #a0a0a0; /* Gray muted text */
+  --accent: #bf6349; /* Coral accent */
+  --accent-foreground: #ffffff; /* White accent text */
+  --destructive: #dc2626; /* Red destructive */
+  --destructive-foreground: #ffffff; /* White destructive text */
+  --border: #404040; /* Dark borders */
+  --input: #2c2c2c; /* Dark inputs */
+  --ring: #bf6349; /* Coral focus rings */
+  --chart-1: #bf6349; /* Coral chart */
+  --chart-2: #727658; /* Olive chart */
+  --chart-3: #e5d4c0; /* Cream chart */
+  --chart-4: #724022; /* Brown chart */
+  --chart-5: #353843; /* Navy chart */
+  --sidebar: #2c2c2c; /* Dark sidebar */
+  --sidebar-foreground: #f5f3f0; /* Light sidebar text */
+  --sidebar-primary: #bf6349; /* Coral sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #3c3c3c; /* Dark sidebar accent */
+  --sidebar-accent-foreground: #f5f3f0; /* Light sidebar accent text */
+  --sidebar-border: #404040; /* Dark sidebar border */
+  --sidebar-ring: #bf6349; /* Coral sidebar ring */
+}
+
+/* Updated font variables to use new fonts */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-poppins);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added smooth scrolling and improved line height */
+    scroll-behavior: smooth;
+    line-height: 1.6;
+  }
+
+  /* Added better typography styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-semibold text-balance;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
+  /* Improved focus styles */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+/* Added custom utility classes for better spacing and effects */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .glass-effect {
+    background: rgba(44, 44, 44, 0.8);
+  }
+}
