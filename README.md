@@ -48,7 +48,7 @@ Follow the commands below to get started:
 
 ```bash
 # clone the repository
-git clone https://github.com/your-username/mridang.git
+git clone https://github.com/gungunjain11/mridang.git
 
 # navigate into the project
 cd mridang
